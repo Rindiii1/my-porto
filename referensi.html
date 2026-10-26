@@ -1,0 +1,188 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Rindi Fadilah — Dark Pink</title>
+<script src="./vendor/react.js"></script>
+<script src="./vendor/react-dom.js"></script>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet">
+<style>
+body{margin:0;font-family:'Inter',system-ui,sans-serif;background:#0A0A0C;color:#F5F5F7}
+a{color:#F5F5F7;text-decoration:none}
+a:hover{color:#FF8CC8}
+.gt{background:linear-gradient(90deg,#FF8CC8 0%,#FF3D8F 100%);-webkit-background-clip:text;background-clip:text;color:transparent}
+.gbtn{background:linear-gradient(135deg,#FF8CC8 0%,#FF3D8F 100%);color:#0A0A0C}
+.gbtn:hover{color:#0A0A0C;filter:brightness(1.08)}
+.gpanel{background:linear-gradient(135deg,#D81B6F 0%,#A3124F 55%,#3A0B24 100%)}
+.card{border:1px solid rgba(255,255,255,0.09);transition:transform .2s ease,border-color .2s ease}
+.card:hover{transform:translateY(-4px);border-color:rgba(255,79,163,0.55)}
+.v1{background:linear-gradient(160deg,rgba(255,79,163,0.18),rgba(255,79,163,0.02) 55%),#121216}
+.v2{background:linear-gradient(200deg,rgba(255,79,163,0.16),rgba(255,79,163,0.02) 55%),#121216}
+.v3{background:linear-gradient(120deg,rgba(194,24,91,0.22),rgba(194,24,91,0.02) 60%),#121216}
+.chip{background:rgba(255,79,163,0.12);border:1px solid rgba(255,79,163,0.3);color:#FF9BD0}
+</style>
+</helmet>
+<div style="background:radial-gradient(900px 640px at 92% -8%, rgba(255,79,163,0.32), transparent 62%), radial-gradient(760px 560px at 0% 38%, rgba(194,24,91,0.16), transparent 60%), radial-gradient(900px 600px at 10% 100%, rgba(255,79,163,0.18), transparent 60%), #0A0A0C; color:#F5F5F7; font-family:'Inter',system-ui,sans-serif; font-size:16px; line-height:1.6; letter-spacing:-0.005em">
+
+<!-- HEADER -->
+<div style="display:flex; justify-content:center; padding:0 clamp(20px,5vw,56px)">
+<div style="width:100%; max-width:1120px; box-sizing:border-box; display:flex; flex-wrap:wrap; align-items:center; justify-content:space-between; gap:12px 32px; padding:28px 0">
+<a href="#top" style="font-size:15px; font-weight:600; letter-spacing:-0.01em; color:#F5F5F7">Rindi Fadilah</a>
+<div style="display:flex; flex-wrap:wrap; align-items:center; gap:8px 32px; font-size:14px">
+<a href="#work" style="color:#A1A1AA">Work</a>
+<a href="#experience" style="color:#A1A1AA">Experience</a>
+<a href="#contact" class="gbtn" style="display:inline-flex; align-items:center; padding:9px 18px; border-radius:999px; font-weight:600">Contact</a>
+</div>
+</div>
+</div>
+
+<!-- HERO -->
+<div id="top" style="display:flex; justify-content:center; padding:0 clamp(20px,5vw,56px)">
+<div style="width:100%; max-width:1120px; box-sizing:border-box; display:flex; flex-wrap:wrap; align-items:center; gap:56px; padding:72px 0 112px">
+<div style="flex:1 1 480px; display:flex; flex-direction:column; gap:32px">
+<div class="chip" style="align-self:flex-start; padding:7px 14px; border-radius:999px; font-size:13px; font-weight:600">Frontend Developer &amp; UI/UX Designer</div>
+<h1 style="margin:0; font-weight:500; font-size:clamp(40px,5.8vw,76px); line-height:1.04; letter-spacing:-0.04em">Clear, accessible interfaces for the <span class="gt">web</span>.</h1>
+<p style="margin:0; max-width:520px; font-size:19px; color:#A1A1AA">Hi, I'm Rindi. An Informatics Engineering student at Universitas Dian Nuswantoro and Frontend Developer at Bengkel Koding, working with Next.js, React, and Figma.</p>
+<div style="display:flex; flex-wrap:wrap; gap:12px; font-size:16px; font-weight:600">
+<a href="#work" class="gbtn" style="display:inline-flex; align-items:center; padding:15px 26px; border-radius:999px">View selected work</a>
+<a href="mailto:rindifadilah71@gmail.com" style="display:inline-flex; align-items:center; padding:15px 26px; border-radius:999px; border:1px solid rgba(255,255,255,0.2); color:#F5F5F7; font-weight:500">Say hello</a>
+</div>
+</div>
+<div style="flex:1 1 320px; display:flex; justify-content:center">
+<div style="position:relative; width:100%; max-width:380px">
+<div style="width:100%; aspect-ratio:4/5; border-radius:190px 190px 28px 28px; background:linear-gradient(180deg,#FF4FA3 0%,#9C1B5E 45%,#16060F 100%); display:flex; align-items:flex-end; justify-content:center; padding:24px; box-sizing:border-box; font-size:13px; color:#F5F5F7; box-shadow:0 30px 80px rgba(255,79,163,0.25)">Profile photo</div>
+<div style="position:absolute; bottom:64px; left:-22px; padding:11px 18px; border-radius:999px; background:#16161B; border:1px solid rgba(255,255,255,0.14); font-size:13px; font-weight:600; color:#F5F5F7">Semarang, ID</div>
+<div style="position:absolute; top:16px; right:-14px; width:64px; height:64px; border-radius:50%; background:#16161B; border:1px solid rgba(255,79,163,0.5)"></div>
+</div>
+</div>
+</div>
+</div>
+
+<!-- WORK -->
+<div id="work" style="display:flex; justify-content:center; padding:0 clamp(20px,5vw,56px)">
+<div style="width:100%; max-width:1120px; box-sizing:border-box; display:flex; flex-direction:column; gap:40px">
+<div style="display:flex; flex-wrap:wrap; align-items:flex-end; justify-content:space-between; gap:16px">
+<h2 style="margin:0; font-size:clamp(30px,4vw,44px); font-weight:500; letter-spacing:-0.035em; line-height:1.1">Selected work</h2>
+<span style="font-size:15px; color:#A1A1AA">7 projects · design &amp; code</span>
+</div>
+
+<div style="display:flex; flex-wrap:wrap; gap:20px">
+<a href="CaseStudy.dc.html" class="card v1" style="flex:1 1 460px; display:flex; flex-direction:column; justify-content:space-between; gap:40px; min-height:420px; padding:32px; border-radius:24px; box-sizing:border-box; color:#F5F5F7; overflow:hidden">
+<div style="display:flex; flex-direction:column; gap:8px"><span style="font-size:13px; font-weight:600; color:#FF8CC8">UI/UX + Frontend</span><span style="font-size:32px; font-weight:500; letter-spacing:-0.03em; line-height:1.1">Situ Gumuda</span><span style="font-size:15px; color:#A1A1AA; max-width:380px">Survey management system for BPS Semarang City, with bulk data entry through Excel.</span></div>
+<div style="height:170px; border-radius:16px 16px 0 0; background:#1C1C23; border:1px solid rgba(255,255,255,0.1); border-bottom:0; display:flex; align-items:flex-end; padding:16px; box-sizing:border-box; font-size:12.5px; color:#A1A1AA; margin-bottom:-32px">Screenshot placeholder</div>
+</a>
+<a href="CaseStudy.dc.html" class="card v2" style="flex:1 1 460px; display:flex; flex-direction:column; justify-content:space-between; gap:40px; min-height:420px; padding:32px; border-radius:24px; box-sizing:border-box; color:#F5F5F7; overflow:hidden">
+<div style="display:flex; flex-direction:column; gap:8px"><span style="font-size:13px; font-weight:600; color:#FF8CC8">UI/UX + Frontend</span><span style="font-size:32px; font-weight:500; letter-spacing:-0.03em; line-height:1.1">Early Warning System</span><span style="font-size:15px; color:#A1A1AA; max-width:380px">Academic monitoring dashboard for achievements, graduation status, and academic risk.</span></div>
+<div style="height:170px; border-radius:16px 16px 0 0; background:#1C1C23; border:1px solid rgba(255,255,255,0.1); border-bottom:0; display:flex; align-items:flex-end; padding:16px; box-sizing:border-box; font-size:12.5px; color:#A1A1AA; margin-bottom:-32px">Screenshot placeholder</div>
+</a>
+</div>
+
+<div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(300px, 1fr)); gap:20px">
+<sc-for list="{{projects}}" as="p" hint-placeholder-count="5">
+<a href="CaseStudy.dc.html" class="card {{p.cls}}" style="display:flex; flex-direction:column; gap:12px; min-height:230px; padding:28px; border-radius:24px; box-sizing:border-box; color:#F5F5F7">
+<span style="font-size:13px; font-weight:600; color:#FF8CC8">{{p.type}}</span>
+<span style="font-size:26px; font-weight:500; letter-spacing:-0.025em; line-height:1.15">{{p.name}}</span>
+<span style="font-size:15px; color:#A1A1AA; flex:1">{{p.desc}}</span>
+<span style="font-size:14px; font-weight:500; color:#F5F5F7">View project →</span>
+</a>
+</sc-for>
+<a href="#contact" class="gpanel" style="display:flex; flex-direction:column; justify-content:space-between; gap:12px; min-height:230px; padding:28px; border-radius:24px; box-sizing:border-box; color:#FFFFFF">
+<span style="font-size:26px; font-weight:600; letter-spacing:-0.025em; line-height:1.2; color:#FFFFFF">Have a project in mind?</span>
+<span style="font-size:15px; font-weight:600; color:#FFFFFF">Let's talk →</span>
+</a>
+</div>
+</div>
+</div>
+
+<!-- EXPERIENCE -->
+<div id="experience" style="display:flex; justify-content:center; padding:136px clamp(20px,5vw,56px) 0">
+<div style="width:100%; max-width:1120px; box-sizing:border-box; display:flex; flex-wrap:wrap; gap:48px 80px">
+<div style="flex:1 1 300px; display:flex; flex-direction:column; gap:18px">
+<h2 style="margin:0; font-size:clamp(30px,4vw,44px); font-weight:500; letter-spacing:-0.035em; line-height:1.1">Experience</h2>
+<p style="margin:0; max-width:340px; color:#A1A1AA">Teaching, building, and leading — in the classroom, in the team, and on stage.</p>
+<div style="display:flex; flex-wrap:wrap; gap:8px; padding-top:6px; font-size:13px; font-weight:500"><span class="chip" style="padding:7px 14px; border-radius:999px">Indonesian — native</span><span class="chip" style="padding:7px 14px; border-radius:999px">English — professional</span><span class="chip" style="padding:7px 14px; border-radius:999px">Javanese — conversational</span></div>
+</div>
+<div style="flex:2 1 520px; display:flex; flex-direction:column">
+<sc-for list="{{experience}}" as="e" hint-placeholder-count="4">
+<div style="display:flex; flex-wrap:wrap; align-items:center; gap:10px 28px; padding:24px 0; border-top:1px solid rgba(255,255,255,0.1)">
+<div style="flex:2 1 260px; display:flex; flex-direction:column; gap:2px"><span style="font-size:19px; font-weight:500; letter-spacing:-0.02em">{{e.role}}</span><span style="font-size:15px; color:#A1A1AA">{{e.org}}</span></div>
+<span class="chip" style="padding:7px 14px; border-radius:999px; font-size:13px; font-weight:500; white-space:nowrap">{{e.period}}</span>
+</div>
+</sc-for>
+<div style="border-top:1px solid rgba(255,255,255,0.1)"></div>
+</div>
+</div>
+</div>
+
+<!-- TOOLKIT + SPEAKING -->
+<div style="display:flex; justify-content:center; padding:136px clamp(20px,5vw,56px) 0">
+<div style="width:100%; max-width:1120px; box-sizing:border-box; display:flex; flex-wrap:wrap; gap:20px">
+<div class="card" style="flex:1 1 440px; display:flex; flex-direction:column; gap:28px; padding:36px; border-radius:24px; background:#121216; box-sizing:border-box">
+<h2 style="margin:0; font-size:26px; font-weight:500; letter-spacing:-0.03em">Toolkit</h2>
+<div style="display:flex; flex-direction:column; gap:10px"><span style="font-size:13px; color:#A1A1AA">Frontend</span><div style="display:flex; flex-wrap:wrap; gap:8px"><sc-for list="{{frontendTools}}" as="t" hint-placeholder-count="5"><span class="chip" style="padding:8px 14px; border-radius:999px; font-size:14px; font-weight:500">{{t}}</span></sc-for></div></div>
+<div style="display:flex; flex-direction:column; gap:10px"><span style="font-size:13px; color:#A1A1AA">Design &amp; productivity</span><div style="display:flex; flex-wrap:wrap; gap:8px"><sc-for list="{{designTools}}" as="t" hint-placeholder-count="5"><span class="chip" style="padding:8px 14px; border-radius:999px; font-size:14px; font-weight:500">{{t}}</span></sc-for></div></div>
+<div style="display:flex; flex-direction:column; gap:10px"><span style="font-size:13px; color:#A1A1AA">Focus</span><div style="display:flex; flex-wrap:wrap; gap:8px"><sc-for list="{{focus}}" as="t" hint-placeholder-count="5"><span class="chip" style="padding:8px 14px; border-radius:999px; font-size:14px; font-weight:500">{{t}}</span></sc-for></div></div>
+</div>
+<div class="card" style="flex:1 1 440px; display:flex; flex-direction:column; gap:8px; padding:36px; border-radius:24px; background:#121216; box-sizing:border-box">
+<h2 style="margin:0 0 12px; font-size:26px; font-weight:500; letter-spacing:-0.03em">Speaking &amp; community</h2>
+<div style="display:flex; flex-wrap:wrap; gap:8px 20px; padding:16px 0; border-top:1px solid rgba(255,255,255,0.1)"><span style="flex:0 0 120px; font-size:14px; font-weight:600; color:#FF8CC8">Guest speaker</span><span style="flex:1 1 220px; color:#A1A1AA; font-size:15px">TVKU Broadcast 2025</span></div>
+<div style="display:flex; flex-wrap:wrap; gap:8px 20px; padding:16px 0; border-top:1px solid rgba(255,255,255,0.1)"><span style="flex:0 0 120px; font-size:14px; font-weight:600; color:#FF8CC8">MC</span><span style="flex:1 1 220px; color:#A1A1AA; font-size:15px">Hi Technology 2025 opening · High Performance Computing · Genetic Algorithm seminar · Konek TI / Makrab 2025</span></div>
+<div style="display:flex; flex-wrap:wrap; gap:8px 20px; padding:16px 0; border-top:1px solid rgba(255,255,255,0.1)"><span style="flex:0 0 120px; font-size:14px; font-weight:600; color:#FF8CC8">Moderator</span><span style="flex:1 1 220px; color:#A1A1AA; font-size:15px">Hi Technology 2025 competition · Wisuda PPKO Sekolah Perempuan</span></div>
+<div style="display:flex; flex-wrap:wrap; gap:8px 20px; padding:16px 0; border-top:1px solid rgba(255,255,255,0.1)"><span style="flex:0 0 120px; font-size:14px; font-weight:600; color:#FF8CC8">Committee</span><span style="flex:1 1 220px; color:#A1A1AA; font-size:15px">Seminar Nasional Teknik Informatika</span></div>
+</div>
+</div>
+</div>
+
+<!-- CONTACT -->
+<div id="contact" style="display:flex; justify-content:center; padding:136px clamp(20px,5vw,56px) 0">
+<div class="gpanel" style="width:100%; max-width:1120px; box-sizing:border-box; padding:clamp(32px,6vw,72px); border-radius:32px; color:#FFFFFF; display:flex; flex-direction:column; gap:28px">
+<h2 style="margin:0; max-width:760px; font-size:clamp(34px,5.4vw,68px); font-weight:500; letter-spacing:-0.04em; line-height:1.05; color:#FFFFFF">Let's build something clear and useful.</h2>
+<p style="margin:0; max-width:480px; font-size:18px; color:#FFFFFF">Reach out for collaborations, internships, or freelance work.</p>
+<div style="display:flex; flex-wrap:wrap; gap:12px; font-size:16px; font-weight:600">
+<a href="mailto:rindifadilah71@gmail.com" style="display:inline-flex; align-items:center; padding:15px 26px; border-radius:999px; background:#0A0A0C; color:#F5F5F7">rindifadilah71@gmail.com</a>
+<a href="https://www.linkedin.com/in/rindi-fadilah-" style="display:inline-flex; align-items:center; padding:15px 26px; border-radius:999px; border:1.5px solid #FFFFFF; color:#FFFFFF">LinkedIn</a>
+</div>
+</div>
+</div>
+
+<!-- FOOTER -->
+<div style="display:flex; justify-content:center; padding:0 clamp(20px,5vw,56px)">
+<div style="width:100%; max-width:1120px; box-sizing:border-box; display:flex; flex-wrap:wrap; justify-content:space-between; gap:8px; padding:56px 0 40px; font-size:13px; color:#A1A1AA">
+<span>© 2026 Rindi Fadilah</span><span>Built with Next.js</span>
+</div>
+</div>
+
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":1440,"height":4500}}'>
+class Component extends DCLogic {
+  renderVals() {
+    return {
+      projects: [
+        { name: 'Restaurant Reservation System', type: 'UI/UX + Frontend', cls: 'v3', desc: 'Table management, menu ordering, and payments for admins, owners, and customers.' },
+        { name: 'Digi.id', type: 'UI/UX + Frontend', cls: 'v1', desc: 'Digital identity wallet using encryption and decryption to protect sensitive data.' },
+        { name: 'WashWish', type: 'UI/UX Design', cls: 'v2', desc: 'Online laundry platform for ordering and tracking, made for students and professionals.' },
+        { name: 'Technora', type: 'UI/UX Design', cls: 'v3', desc: 'AgriTech early warning system for monitoring and mitigating agricultural pest risk.' },
+        { name: 'NutriShare', type: 'UI/UX Design', cls: 'v1', desc: 'Food-sharing platform connecting restaurants with surplus food to communities in need.' }
+      ],
+      experience: [
+        { role: 'Teaching Assistant & Frontend Developer', org: 'Bengkel Koding', period: 'Sep 2025 — now' },
+        { role: 'Frontend Developer Intern', org: 'Badan Pusat Statistik', period: 'Aug – Sep 2025' },
+        { role: 'General Treasurer', org: 'HMTI UDINUS', period: 'Aug 2024 — now' },
+        { role: 'IPTEK Division Member', org: 'HMTI UDINUS', period: 'Sep 2023 — now' }
+      ],
+      frontendTools: ['Next.js', 'React.js', 'TypeScript', 'Tailwind CSS', 'Laravel'],
+      designTools: ['Figma', 'VS Code', 'GitHub', 'Postman', 'Notion'],
+      focus: ['UI/UX Design', 'Design Systems', 'Dashboards', 'Accessibility', 'Responsive Design']
+    };
+  }
+}
+</script>
+</body>
+</html>

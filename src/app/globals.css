@@ -1,155 +1,251 @@
 ﻿@import "tailwindcss";
 
 @theme {
-  /* ====== Editorial portfolio palette ====== */
-  --color-forest: #243B26;
-  --color-forest-deep: #1B2D1C;
-  --color-cream: #F4EFE4;
-  --color-cream-deep: #E8E0CE;
-  --color-amber: #F0A500;
-  --color-amber-soft: #F4B83A;
-  --color-rust: #E2562F;
-  --color-rust-soft: #EA6E47;
-  --color-ink: #1A1A1A;
-  --color-ink-soft: #2A2A2A;
-  --color-cream-text: #F4EFE4;
-
-  /* ====== Font families (exposed via next/font CSS variables) ====== */
-  --font-display: var(--font-display);
+  --color-night: #0a0a0c;
+  --color-panel: #121216;
+  --color-elevated: #16161b;
+  --color-pink: #ff8cc8;
+  --color-pink-strong: #ff3d8f;
+  --color-pink-deep: #c2185b;
+  --color-muted: #a1a1aa;
   --font-sans: var(--font-sans);
-
-  /* Legacy color names retained so any third-party code referencing them
-     still resolves. The new editorial theme is the source of truth. */
-  --color-dark-bg: #243B26;
-  --color-dark-card: #F4EFE4;
 }
 
-/* ============ Scroll margin for anchor jumps (clear sticky navbar) ============ */
-section[id] {
-  scroll-margin-top: 96px;
+:root {
+  --night: #0a0a0c;
+  --panel: #121216;
+  --text: #f5f5f7;
+  --muted: #a1a1aa;
+  --pink: #ff8cc8;
+  --pink-strong: #ff3d8f;
 }
 
-/* ============ Base ============ */
-html, body {
-  background: var(--color-forest);
-  color: var(--color-cream-text);
+html {
+  scroll-behavior: smooth;
 }
 
-/* ============ Outline text (used for background decorations) ============ */
-.outline-amber {
-  -webkit-text-stroke: 1px var(--color-amber);
+body {
+  margin: 0;
+  font-family: "Inter", system-ui, sans-serif;
+  background: var(--night);
+  color: var(--text);
+  font-size: 16px;
+  line-height: 1.6;
+  letter-spacing: -0.005em;
+  -webkit-font-smoothing: antialiased;
+}
+
+a {
+  color: var(--text);
+  text-decoration: none;
+}
+
+a:hover {
+  color: var(--pink);
+}
+
+.gt {
+  background: linear-gradient(90deg, #ff8cc8 0%, #ff3d8f 100%);
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  background-clip: text;
   color: transparent;
-}
-.outline-cream {
-  -webkit-text-stroke: 1px var(--color-cream);
-  color: transparent;
-}
-.outline-rust {
-  -webkit-text-stroke: 1px var(--color-rust);
-  color: transparent;
-}
-.outline-ink {
-  -webkit-text-stroke: 1px var(--color-ink);
-  color: transparent;
+  animation: text-shine 6s linear infinite;
 }
 
-/* ============ Section text colors ============ */
-.section-cream {
-  background: var(--color-cream);
-  color: var(--color-ink);
-}
-.section-forest {
-  background: var(--color-forest);
-  color: var(--color-cream-text);
+@keyframes text-shine {
+  to {
+    background-position: 200% center;
+  }
 }
 
-/* ============ Subtle paper texture for cream sections ============ */
-.bg-paper {
-  background-color: var(--color-cream);
-  background-image:
-    radial-gradient(rgba(36, 59, 38, 0.05) 1px, transparent 1px),
-    radial-gradient(rgba(36, 59, 38, 0.04) 1px, transparent 1px);
-  background-size: 24px 24px, 24px 24px;
-  background-position: 0 0, 12px 12px;
+.gbtn {
+  background: linear-gradient(135deg, #ff8cc8 0%, #ff3d8f 100%);
+  color: #0a0a0c;
+  transition: filter 0.25s ease, transform 0.25s ease, box-shadow 0.25s ease;
 }
 
-/* ============ Keyframe animations ============ */
-@keyframes bounce-soft {
-  0%, 100% { transform: translateY(0); }
-  50% { transform: translateY(-6px); }
-}
-.animate-bounce-soft { animation: bounce-soft 2s ease-in-out infinite; }
-
-@keyframes marquee {
-  from { transform: translateX(0); }
-  to { transform: translateX(-50%); }
-}
-.animate-marquee { animation: marquee 40s linear infinite; }
-
-/* Right-to-left marquee (alias kept for legacy). */
-@keyframes marquee-right {
-  from { transform: translateX(0); }
-  to { transform: translateX(-50%); }
-}
-.animate-marquee-right {
-  animation: marquee-right 40s linear infinite;
+.gbtn:hover {
+  color: #0a0a0c;
+  filter: brightness(1.08);
+  transform: translateY(-2px);
+  box-shadow: 0 12px 32px rgba(255, 61, 143, 0.35);
 }
 
-/* Left-to-right marquee (starts offset, slides +X). */
-@keyframes marquee-left {
-  from { transform: translateX(-50%); }
-  to { transform: translateX(0); }
-}
-.animate-marquee-left {
-  animation: marquee-left 40s linear infinite;
+.gpanel {
+  background: linear-gradient(135deg, #d81b6f 0%, #a3124f 55%, #3a0b24 100%);
 }
 
-/* Pause marquee on hover (used by Toolkit section). */
-.pause-on-hover:hover .animate-marquee,
-.pause-on-hover:hover .animate-marquee-left,
-.pause-on-hover:hover .animate-marquee-right {
-  animation-play-state: paused;
+.card {
+  border: 1px solid rgba(255, 255, 255, 0.09);
+  transition: transform 0.3s ease, border-color 0.3s ease,
+    box-shadow 0.3s ease;
 }
 
-@keyframes float-slow {
-  0%, 100% { transform: translate(0, 0) rotate(0deg); }
-  50% { transform: translate(15px, -15px) rotate(8deg); }
+.card:hover {
+  transform: translateY(-6px);
+  border-color: rgba(255, 79, 163, 0.55);
+  box-shadow: 0 24px 60px -24px rgba(255, 79, 163, 0.55);
 }
-.animate-float-slow { animation: float-slow 9s ease-in-out infinite; }
 
-@keyframes pulse-ring {
-  0% { transform: scale(0.8); opacity: 0.6; }
-  100% { transform: scale(1.6); opacity: 0; }
+.shot {
+  transition: transform 0.7s cubic-bezier(0.22, 1, 0.36, 1);
+  transform-origin: center top;
 }
-.animate-pulse-ring { animation: pulse-ring 2.5s ease-out infinite; }
 
-@keyframes spin-slow {
-  to { transform: rotate(360deg); }
+.card:hover .shot {
+  transform: scale(1.05);
 }
-.animate-spin-slow { animation: spin-slow 18s linear infinite; }
 
-/* Subtle gold glow used by Toolkit tool cards on hover. */
-@keyframes gold-glow {
-  0%, 100% { box-shadow: 0 0 0 0 rgba(240, 165, 0, 0); }
-  50% { box-shadow: 0 0 30px 0 rgba(240, 165, 0, 0.25); }
+.arrow {
+  display: inline-block;
+  transition: transform 0.25s ease;
 }
-.animate-gold-glow { animation: gold-glow 3s ease-in-out infinite; }
 
-/* ============ Scrollbar ============ */
+.card:hover .arrow {
+  transform: translateX(5px);
+}
+
+/* ====== Base shell + animated aurora background ====== */
+.page-shell {
+  position: relative;
+  isolation: isolate;
+}
+
+.aurora-layer {
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+.aurora-layer::before,
+.aurora-layer::after {
+  content: "";
+  position: absolute;
+  width: 70vw;
+  height: 70vw;
+  max-width: 820px;
+  max-height: 820px;
+  border-radius: 50%;
+  filter: blur(40px);
+  will-change: transform;
+}
+
+.aurora-layer::before {
+  top: -22%;
+  right: -12%;
+  background: radial-gradient(
+    circle,
+    rgba(255, 79, 163, 0.22),
+    transparent 65%
+  );
+  animation: aurora-drift 20s ease-in-out infinite;
+}
+
+.aurora-layer::after {
+  bottom: -28%;
+  left: -15%;
+  background: radial-gradient(
+    circle,
+    rgba(194, 24, 91, 0.2),
+    transparent 65%
+  );
+  animation: aurora-drift 26s ease-in-out -10s infinite reverse;
+}
+
+@keyframes aurora-drift {
+  0%,
+  100% {
+    transform: translate3d(0, 0, 0) scale(1);
+  }
+  50% {
+    transform: translate3d(-50px, 50px, 0) scale(1.15);
+  }
+}
+
+/* ====== Floating hero portrait ====== */
+.float-y {
+  animation: float-y 7s ease-in-out infinite;
+}
+
+@keyframes float-y {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-12px);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .gt,
+  .aurora-layer::before,
+  .aurora-layer::after,
+  .float-y {
+    animation: none;
+  }
+
+  .gbtn:hover,
+  .card:hover {
+    transform: none;
+  }
+}
+
+.v1 {
+  background: linear-gradient(
+      160deg,
+      rgba(255, 79, 163, 0.18),
+      rgba(255, 79, 163, 0.02) 55%
+    ),
+    #121216;
+}
+
+.v2 {
+  background: linear-gradient(
+      200deg,
+      rgba(255, 79, 163, 0.16),
+      rgba(255, 79, 163, 0.02) 55%
+    ),
+    #121216;
+}
+
+.v3 {
+  background: linear-gradient(
+      120deg,
+      rgba(194, 24, 91, 0.22),
+      rgba(194, 24, 91, 0.02) 60%
+    ),
+    #121216;
+}
+
+.chip {
+  background: rgba(255, 79, 163, 0.12);
+  border: 1px solid rgba(255, 79, 163, 0.3);
+  color: #ff9bd0;
+}
+
+::selection {
+  background: var(--pink-strong);
+  color: #0a0a0c;
+}
+
 ::-webkit-scrollbar {
   width: 10px;
   height: 10px;
 }
-::-webkit-scrollbar-track { background: var(--color-forest-deep); }
-::-webkit-scrollbar-thumb {
-  background: var(--color-amber);
-  border-radius: 999px;
-}
-::-webkit-scrollbar-thumb:hover {
-  background: var(--color-rust);
+
+::-webkit-scrollbar-track {
+  background: var(--night);
 }
 
-::selection {
-  background: var(--color-amber);
-  color: var(--color-ink);
+::-webkit-scrollbar-thumb {
+  background: #3a0b24;
+  border-radius: 999px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--pink-strong);
 }

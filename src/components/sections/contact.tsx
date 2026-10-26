@@ -127,8 +127,10 @@ const activities = [
   }
 ];
 
+type Activity = (typeof activities)[number];
+
 // Komponen Card
-const ActivityCard = ({ activity }: { activity: any }) => {
+const ActivityCard = ({ activity }: { activity: Activity }) => {
   const Icon = activity.icon;
   return (
     <div className="group relative flex flex-col w-[300px] md:w-[340px] h-[350px] flex-shrink-0 rounded-2xl bg-cream text-ink overflow-hidden border border-cream/10 shadow-sm hover:shadow-2xl hover:-translate-y-2 hover:border-amber/40 transition-all duration-300 cursor-grab active:cursor-grabbing">

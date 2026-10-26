@@ -1,5 +1,4 @@
 ﻿import Link from "next/link";
-import { Button } from "@/components/ui/button";
 import type { Project, ProjectRole } from "@/types";
 
 const projectsData: Record<string, Project> = {
@@ -123,13 +122,33 @@ interface PageProps {
   params: Promise<{ id: string }>;
 }
 
+const pageBackground =
+  "radial-gradient(900px 640px at 92% -8%, rgba(255,79,163,0.24), transparent 62%), radial-gradient(760px 560px at 0% 38%, rgba(194,24,91,0.14), transparent 60%), #0A0A0C";
+
 function RoleBadge({ role }: { role: ProjectRole }) {
   const isDesign = role === "UI/UX Design";
   return (
     <span
-      className={`inline-flex items-center gap-1.5 rounded-full px-2.5 py-0.5 text-[10px] font-bold uppercase tracking-wider ${
-        isDesign ? "bg-amber text-ink" : "bg-ink text-cream"
-      }`}
+      style={{
+        display: "inline-flex",
+        alignItems: "center",
+        borderRadius: 999,
+        padding: "5px 12px",
+        fontSize: 12,
+        fontWeight: 600,
+        letterSpacing: "0.02em",
+        ...(isDesign
+          ? {
+              background: "rgba(255,79,163,0.12)",
+              border: "1px solid rgba(255,79,163,0.3)",
+              color: "#FF9BD0",
+            }
+          : {
+              background: "rgba(255,255,255,0.06)",
+              border: "1px solid rgba(255,255,255,0.15)",
+              color: "#F5F5F7",
+            }),
+      }}
     >
       {role}
     </span>
@@ -142,13 +161,43 @@ export default async function ProjectDetailPage({ params }: PageProps) {
 
   if (!project) {
     return (
-      <main className="section-cream min-h-screen flex items-center justify-center px-4">
-        <div className="text-center">
-          <h1 className="text-2xl font-bold text-ink mb-4">Project Not Found</h1>
-          <Link href="/#portfolio">
-            <Button variant="outline" className="border-ink/30 text-ink hover:bg-ink/5">
-              Back to Portfolio
-            </Button>
+      <main
+        style={{
+          minHeight: "100vh",
+          display: "flex",
+          alignItems: "center",
+          justifyContent: "center",
+          padding: 20,
+          background: pageBackground,
+          color: "#F5F5F7",
+          fontFamily: "'Inter',system-ui,sans-serif",
+        }}
+      >
+        <div style={{ textAlign: "center" }}>
+          <h1
+            style={{
+              margin: "0 0 20px",
+              fontSize: 30,
+              fontWeight: 500,
+              letterSpacing: "-0.03em",
+            }}
+          >
+            Project Not Found
+          </h1>
+          <Link
+            href="/#work"
+            style={{
+              display: "inline-flex",
+              alignItems: "center",
+              padding: "13px 24px",
+              borderRadius: 999,
+              border: "1px solid rgba(255,255,255,0.2)",
+              color: "#F5F5F7",
+              fontSize: 15,
+              fontWeight: 500,
+            }}
+          >
+            Back to Projects
           </Link>
         </div>
       </main>
@@ -156,57 +205,152 @@ export default async function ProjectDetailPage({ params }: PageProps) {
   }
 
   return (
-    <main className="section-cream min-h-screen py-24 px-4">
-      <div className="max-w-4xl mx-auto">
+    <main
+      style={{
+        minHeight: "100vh",
+        padding: "64px clamp(20px,5vw,56px) 96px",
+        background: pageBackground,
+        color: "#F5F5F7",
+        fontFamily: "'Inter',system-ui,sans-serif",
+        lineHeight: 1.6,
+        letterSpacing: "-0.005em",
+      }}
+    >
+      <div style={{ maxWidth: 880, margin: "0 auto" }}>
         <Link
-          href="/#portfolio"
-          className="text-sm font-semibold text-ink/60 hover:text-rust mb-8 inline-block transition-colors"
+          href="/#work"
+          style={{
+            display: "inline-block",
+            marginBottom: 32,
+            fontSize: 14,
+            fontWeight: 600,
+            color: "#A1A1AA",
+          }}
         >
-          &larr; Back to Projects
+          ← Back to Projects
         </Link>
 
-        <article className="rounded-2xl border border-ink/10 bg-cream-deep/40 p-6 sm:p-8 shadow-sm">
-          <span className="inline-flex items-center gap-1.5 rounded-full bg-amber text-ink px-3 py-1 text-[10px] font-bold uppercase tracking-wider">
+        <article
+          style={{
+            borderRadius: 24,
+            border: "1px solid rgba(255,255,255,0.09)",
+            background: "#121216",
+            padding: "clamp(24px,4vw,40px)",
+          }}
+        >
+          <span
+            className="chip"
+            style={{
+              display: "inline-flex",
+              alignItems: "center",
+              borderRadius: 999,
+              padding: "6px 14px",
+              fontSize: 12,
+              fontWeight: 600,
+            }}
+          >
             {project.category}
           </span>
-          <h1 className="font-display font-bold text-3xl sm:text-4xl text-ink mt-3 mb-4">
+          <h1
+            style={{
+              margin: "14px 0 16px",
+              fontSize: "clamp(30px,4.5vw,46px)",
+              fontWeight: 500,
+              letterSpacing: "-0.035em",
+              lineHeight: 1.1,
+            }}
+          >
             {project.title}
           </h1>
 
-          <div className="flex flex-wrap gap-2 mb-6">
+          <div
+            style={{
+              display: "flex",
+              flexWrap: "wrap",
+              gap: 8,
+              marginBottom: 28,
+            }}
+          >
             {project.roles.map((role) => (
               <RoleBadge key={role} role={role} />
             ))}
           </div>
 
-          <div className="w-full mb-6 overflow-hidden rounded-xl border border-ink/10 bg-cream">
+          <div
+            style={{
+              width: "100%",
+              marginBottom: 28,
+              overflow: "hidden",
+              borderRadius: 16,
+              border: "1px solid rgba(255,255,255,0.09)",
+              background: "#1C1C23",
+            }}
+          >
             {project.image ? (
               <img
                 src={project.image}
                 alt={project.title}
-                className="w-full h-auto object-cover"
+                style={{
+                  display: "block",
+                  width: "100%",
+                  height: "auto",
+                  objectFit: "cover",
+                }}
               />
             ) : (
-              <div className="w-full h-64 flex items-center justify-center text-ink/40 font-semibold">
+              <div
+                style={{
+                  display: "flex",
+                  alignItems: "center",
+                  justifyContent: "center",
+                  height: 256,
+                  color: "#A1A1AA",
+                  fontWeight: 600,
+                }}
+              >
                 Project Image
               </div>
             )}
           </div>
 
-          {/* Menambahkan whitespace-pre-wrap di sini agar format paragraf dan bullet list (\n) terbaca dengan baik tanpa merusak desain */}
-          <p className="text-ink/75 mb-6 leading-relaxed whitespace-pre-wrap">
+          <p
+            style={{
+              margin: "0 0 28px",
+              color: "#A1A1AA",
+              lineHeight: 1.75,
+              whiteSpace: "pre-wrap",
+              fontSize: 15,
+            }}
+          >
             {project.description}
           </p>
 
-          <div className="mb-4">
-            <h2 className="text-xs uppercase tracking-wider text-ink/60 font-bold mb-2">
+          <div style={{ marginBottom: 24 }}>
+            <h2
+              style={{
+                margin: "0 0 10px",
+                fontSize: 12,
+                fontWeight: 600,
+                letterSpacing: "0.08em",
+                textTransform: "uppercase",
+                color: "#A1A1AA",
+              }}
+            >
               Tools
             </h2>
-            <div className="flex flex-wrap gap-1.5">
+            <div style={{ display: "flex", flexWrap: "wrap", gap: 8 }}>
               {project.tools.map((tool) => (
                 <span
                   key={tool}
-                  className="text-[11px] font-semibold px-2.5 py-1 bg-cream text-ink/75 rounded-full border border-ink/10"
+                  style={{
+                    borderRadius: 999,
+                    padding: "7px 14px",
+                    fontSize: 13,
+                    fontWeight: 500,
+                    background: "rgba(255,79,163,0.12)",
+                    border: "1px solid rgba(255,79,163,0.3)",
+                    color: "#FF9BD0",
+                  }}
                 >
                   {tool}
                 </span>
@@ -215,15 +359,32 @@ export default async function ProjectDetailPage({ params }: PageProps) {
           </div>
 
           {project.tags?.length > 0 && (
-            <div className="mb-6">
-              <h2 className="text-xs uppercase tracking-wider text-ink/60 font-bold mb-2">
+            <div style={{ marginBottom: 28 }}>
+              <h2
+                style={{
+                  margin: "0 0 10px",
+                  fontSize: 12,
+                  fontWeight: 600,
+                  letterSpacing: "0.08em",
+                  textTransform: "uppercase",
+                  color: "#A1A1AA",
+                }}
+              >
                 Tags
               </h2>
-              <div className="flex flex-wrap gap-1.5">
+              <div style={{ display: "flex", flexWrap: "wrap", gap: 8 }}>
                 {project.tags.map((tag) => (
                   <span
                     key={tag}
-                    className="text-[11px] font-bold uppercase tracking-wider px-2.5 py-0.5 bg-ink text-cream rounded-full"
+                    style={{
+                      borderRadius: 999,
+                      padding: "7px 14px",
+                      fontSize: 12,
+                      fontWeight: 600,
+                      background: "rgba(255,255,255,0.06)",
+                      border: "1px solid rgba(255,255,255,0.15)",
+                      color: "#F5F5F7",
+                    }}
                   >
                     {tag}
                   </span>
@@ -232,24 +393,51 @@ export default async function ProjectDetailPage({ params }: PageProps) {
             </div>
           )}
 
-          <div className="flex flex-wrap gap-3 pt-6 border-t border-dashed border-ink/15">
+          <div
+            style={{
+              display: "flex",
+              flexWrap: "wrap",
+              gap: 12,
+              paddingTop: 24,
+              borderTop: "1px solid rgba(255,255,255,0.1)",
+            }}
+          >
             {project.demoUrl && project.demoUrl !== "#" && (
-              <Button asChild className="bg-amber text-ink hover:bg-amber-soft font-semibold rounded-lg">
-                <a href={project.demoUrl} target="_blank" rel="noreferrer">
-                  View Demo
-                </a>
-              </Button>
+              <a
+                href={project.demoUrl}
+                target="_blank"
+                rel="noreferrer"
+                className="gbtn"
+                style={{
+                  display: "inline-flex",
+                  alignItems: "center",
+                  padding: "13px 24px",
+                  borderRadius: 999,
+                  fontSize: 15,
+                  fontWeight: 600,
+                }}
+              >
+                View Demo
+              </a>
             )}
             {project.repoUrl && project.repoUrl !== "#" && (
-              <Button
-                asChild
-                variant="outline"
-                className="border-ink/30 text-ink hover:bg-ink/5 font-semibold rounded-lg"
+              <a
+                href={project.repoUrl}
+                target="_blank"
+                rel="noreferrer"
+                style={{
+                  display: "inline-flex",
+                  alignItems: "center",
+                  padding: "13px 24px",
+                  borderRadius: 999,
+                  fontSize: 15,
+                  fontWeight: 500,
+                  border: "1px solid rgba(255,255,255,0.2)",
+                  color: "#F5F5F7",
+                }}
               >
-                <a href={project.repoUrl} target="_blank" rel="noreferrer">
-                  View Repository
-                </a>
-              </Button>
+                View Repository
+              </a>
             )}
           </div>
         </article>
